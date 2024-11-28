@@ -19,6 +19,6 @@ services:
       - mutagen-evraz-backend
 
 networks:
-  mutagen-backend:
+  mutagen-evraz-backend:
     external: true
     name: mutagen-evraz-backend
