@@ -8,6 +8,7 @@
 - **target_file_url** (строка): Ссылка на файл или архив, который необходимо проанализировать
 - **instructions_file_url** (строка): Ссылка на pdf-файл с инструкциями - правилами проекта
 - **last_modified_dttm** (число или `null`): Дата последнего изменения проекта в формате Unix (количество секунд с 1 января 1970 года). Если не указано (`null`), то дата определяется из метаданных файлов проекта
+- **status** (строка): Статус
 
 ### Пример сообщения:
 
@@ -16,7 +17,8 @@
   "request_id": "65a2dd0d-dc56-49ee-9e33-5e1a97c36b4e",
   "target_file_url": "http://mutagen.org/files/projects/project.zip",
   "instructions_file_url": "http://mutagen.org/files/projects/instructions.pdf",
-  "last_modified_dttm": 1678998763
+  "last_modified_dttm": 1678998763,
+  "status": "received"
 }
 
 ```
@@ -27,12 +29,14 @@
 
 - **request_id** (uuid): Уникальный идентификатор запроса
 - **file_url** (строка): Ссылка на файл с отчетом - результатом ревью
+- **status** (строка): Статус
 
 ### Пример сообщения:
 
 ```json
 {
   "request_id": "65a2dd0d-dc56-49ee-9e33-5e1a97c36b4e",
-  "file_url": "http://mutagen.org/files/reports/report.pdf"
+  "report_file_url": "http://mutagen.org/files/reports/report.pdf",
+  "status": "success"
 }
 ```
