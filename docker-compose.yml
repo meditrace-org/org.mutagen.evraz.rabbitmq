@@ -3,11 +3,10 @@ version: '3.8'
 services:
   rabbitmq:
     image: rabbitmq:3.11-management-alpine
-    hostname: rabbitmq
+    hostname: evraz-rabbitmq
+    container_name: evraz-rabbitmq
     restart: unless-stopped
     environment:
-      - RABBITMQ_DEFAULT_USER=admin
-      - RABBITMQ_DEFAULT_PASS=admin
       - RABBITMQ_SERVER_ADDITIONAL_ERL_ARGS=-rabbit disk_free_limit 2147483648
     ports:
       - "${MQ_HTTP_PORT:-15672}:${MQ_HTTP_PORT:-15672}"
