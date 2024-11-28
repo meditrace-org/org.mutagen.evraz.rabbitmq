@@ -1,11 +1,12 @@
-# Брокер для общения с процессингом
+# Брокер для общения бэкенда с процессингом
 
 ## Очередь `uploaded_to_review`
 
 Очередь `uploaded_to_review` используется для хранения информации о проектах, которые необходимо отревьюить. Каждое сообщение в очереди содержит следующие данные:
 
 - **request_id** (uuid): Уникальный идентификатор запроса
-- **file_url** (строка): Ссылка на файл или архив, который необходимо проанализировать
+- **target_file_url** (строка): Ссылка на файл или архив, который необходимо проанализировать
+- **instructions_file_url** (строка): Ссылка на pdf-файл с инструкциями - правилами проекта
 - **last_modified_dttm** (число или `null`): Дата последнего изменения проекта в формате Unix (количество секунд с 1 января 1970 года). Если не указано (`null`), то дата определяется из метаданных файлов проекта
 
 ### Пример сообщения:
@@ -13,7 +14,8 @@
 ```json
 {
   "request_id": "65a2dd0d-dc56-49ee-9e33-5e1a97c36b4e",
-  "file_url": "http://mutagen.org/files/project.zip",
+  "target_file_url": "http://mutagen.org/files/projects/project.zip",
+  "instructions_file_url": "http://mutagen.org/files/projects/instructions.pdf",
   "last_modified_dttm": 1678998763
 }
 
@@ -31,6 +33,6 @@
 ```json
 {
   "request_id": "65a2dd0d-dc56-49ee-9e33-5e1a97c36b4e",
-  "file_url": "http://mutagen.org/files/report.pdf"
+  "file_url": "http://mutagen.org/files/reports/report.pdf"
 }
 ```
