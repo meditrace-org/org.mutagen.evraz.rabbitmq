@@ -16,9 +16,9 @@ services:
       - ./init/rabbitmq.conf:/etc/rabbitmq/rabbitmq.conf:ro
       - ./init/definitions.json:/etc/rabbitmq/definitions.json:ro
     networks:
-      - mutagen-backend
+      - mutagen-evraz-backend
 
 networks:
   mutagen-backend:
     external: true
-    name: mutagen-backend
+    name: mutagen-evraz-backend
