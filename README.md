@@ -36,7 +36,7 @@
 ```json
 {
   "request_id": "65a2dd0d-dc56-49ee-9e33-5e1a97c36b4e",
-  "report_content": "http://mutagen.org/files/reports/report.pdf",
+  "report_content": "# Пример отчета: <...>",
   "status": "success"
 }
 ```
