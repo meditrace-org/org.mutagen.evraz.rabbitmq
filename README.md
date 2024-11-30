@@ -28,7 +28,7 @@
 Очередь `review_results` используется для хранения результатов ревью. Каждое сообщение в очереди содержит следующие данные:
 
 - **request_id** (uuid): Уникальный идентификатор запроса
-- **report_file_url** (строка): Ссылка на файл с отчетом - результатом ревью
+- **report_content** (строка): Текст отчета в формате markdown
 - **status** (строка): Статус
 
 ### Пример сообщения:
@@ -36,7 +36,7 @@
 ```json
 {
   "request_id": "65a2dd0d-dc56-49ee-9e33-5e1a97c36b4e",
-  "report_file_url": "http://mutagen.org/files/reports/report.pdf",
+  "report_content": "http://mutagen.org/files/reports/report.pdf",
   "status": "success"
 }
 ```
